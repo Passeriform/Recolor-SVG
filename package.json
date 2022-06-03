@@ -1,0 +1,15 @@
+{
+  "name": "Recolor-SVG",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Passeriform <utbh23041999@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^24.2.4",
+    "xml-js": "^1.6.11"
+  },
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  }
+}
