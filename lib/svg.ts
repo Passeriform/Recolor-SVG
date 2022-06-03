@@ -17,8 +17,10 @@ export function customizeSvg(
   }
 
 	if (size) {
-    svg.svg._attributes.width = size;
-    svg.svg._attributes.height = size;
+		const width = size.split("x")[0] || size;
+		const height = size.split("x")[1] || (size * svg.svg._attributes.height / svg.svg._attributes.width);
+    svg.svg._attributes.width = width;
+    svg.svg._attributes.height = height;
   }
 
 	return js2xml(svg, { compact: true });

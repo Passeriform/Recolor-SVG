@@ -21,11 +21,11 @@ const urlToBuffer = (url: string): Promise<Buffer> => {
 }
 
 export default async (req: NowRequest, res: NowResponse) => {
-	const { svgUrl, color } = req.query
+	const { svgUrl, color, size } = req.query
 
 	const svgBuffer = await urlToBuffer(svgUrl)
 	const file = Buffer.from(
-		customizeSvg(svgBuffer, { color })
+		customizeSvg(svgBuffer, { color, size })
 	)
 
 	res.setHeader("Content-Type", "image/svg+xml");
